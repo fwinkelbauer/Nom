@@ -1,0 +1,18 @@
+﻿@Master['Master.html']
+
+@Section['Content']
+
+<nav>
+    <ul>
+        <li><a href="~/..">Lieferdienste</a></li>
+        <li><a href="~/@Model.ServiceName">Speisekarte</a></li>
+        <li><a href="~/@Model.ServiceName/order">Aktuelle Bestellungen</a></li>
+        <li><a href="~/@Model.ServiceName/order/overview">Zusammenfassung Bestellungen</a></li>
+    </ul>
+</nav>
+
+<p>Telefonnummer: @Model.PhoneNumber</p>
+
+@Section['ContextInformation']
+
+@EndSection

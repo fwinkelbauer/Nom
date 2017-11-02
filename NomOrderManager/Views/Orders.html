@@ -1,0 +1,41 @@
+﻿@Master['DeliveryMaster.html']
+
+@Section['ContextInformation']
+
+@If.HasData
+<table>
+    <tr>
+        <th>Gericht</th>
+        <th>Kommentar</th>
+        <th>Preis</th>
+        <th>Bestellt von</th>
+        <th>Aktion</th>
+    </tr>
+    @Each.WrappedOrders
+    @If.CanCancel
+    <tr class="owner">
+    @EndIf
+    @IfNot.CanCancel
+    <tr>
+    @EndIf
+        <td>@Current.Order.Item.Name</td>
+        <td>@Current.Order.Comment</td>
+        <td>@Current.Order.Item.PriceText</td>
+        <td>@Current.Order.Username</td>
+        <td>
+            @If.CanCancel
+            <form action="~/@Model.ServiceName/order/cancel/@Current.Order.Id">
+                <input type="submit" value="Stornieren" />
+            </form>
+            @EndIf
+        </td>
+    </tr>
+    @EndEach
+</table>
+@EndIf
+
+@IfNot.HasData
+<p>Keine Bestellungen vorhanden!</p>
+@EndIf
+
+@EndSection

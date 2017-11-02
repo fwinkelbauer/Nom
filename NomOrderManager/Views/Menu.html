@@ -1,0 +1,34 @@
+﻿@Master['DeliveryMaster.html']
+
+@Section['ContextInformation']
+
+@If.HasData
+<table>
+    <tr>
+        <th>Gericht</th>
+        <th>Beschreibung</th>
+        <th>Preis</th>
+        <th>Kommentar</th>
+        <th>Aktion</th>
+    </tr>
+    @Each.Menu
+    <tr>
+        <td>@Current.Name</td>
+        <td>@Current.Information</td>
+        <td>@Current.PriceText</td>
+        <td>
+            <form id="commentId@Current.Id" action="~/@Model.ServiceName/order/add/@Current.Id">
+                <input class="cellComment" type="text" name="comment" />
+            </form>
+        </td>
+        <td><input type="submit" value="Bestellen" form="commentId@Current.Id" /></td>
+    </tr>
+    @EndEach
+</table>
+@EndIf
+
+@IfNot.HasData
+<p>Speisekarte nicht verfügbar!</p>
+@EndIf
+
+@EndSection

@@ -1,0 +1,6 @@
+[assembly]
+AssemblyInfo.cs | UTF-8 = (?<version>\d+\.\d+\.\d+\.\d+)
+
+[semver]
+*.nuspec = <version>(?<version>\d+\.\d+\.\d+)
+*.html = v(?<version>\d+\.\d+\.\d+)

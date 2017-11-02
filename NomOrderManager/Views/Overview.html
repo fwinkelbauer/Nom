@@ -1,0 +1,32 @@
+﻿@Master['DeliveryMaster.html']
+
+@Section['ContextInformation']
+
+@If.HasData
+<table>
+    <tr>
+        <th>Menge</th>
+        <th>Gericht</th>
+        <th>Kommentar</th>
+        <th>Preis</th>
+        <th>Preis * Menge</th>
+    </tr>
+    @Each.GroupedOrders
+    <tr>
+        <td>@Current.Amount</td>
+        <td>@Current.Name</td>
+        <td>@Current.Comment</td>
+        <td>@Current.PriceText</td>
+        <td>@Current.PriceSumText</td>
+    </tr>
+    @EndEach
+</table>
+
+<p>Gesamt: @Model.CountText (@Model.TotalText)</p>
+@EndIf
+
+@IfNot.HasData
+<p>Keine Bestellungen vorhanden!</p>
+@EndIf
+
+@EndSection

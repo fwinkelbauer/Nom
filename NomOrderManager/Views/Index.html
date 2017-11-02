@@ -1,0 +1,13 @@
+﻿@Master['Master.html']
+
+@Section['Content']
+
+@If.HasData
+<ul>
+    @Each.Locations
+    <li><a href="/@Current">@Current</a></li>
+    @EndEach
+</ul>
+@EndIf
+
+@EndSection

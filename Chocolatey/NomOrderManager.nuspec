@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>nomordermanager</id>
+    <title>Nom Order Manager</title>
+    <version>0.1.0</version>
+    <authors>fwinkelbauer</authors>
+    <owners>fwinkelbauer</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>A simple food delivery order service</summary>
+    <description>Nom is a web service which can be used to order food</description>
+    <copyright>Copyright (c) 2017 Florian Winkelbauer</copyright>
+    <tags>Food Delivery Service</tags>
+  </metadata>
+  <files>
+    <file src=".\..\NomOrderManager\bin\Release\**\*" target="tools" />
+  </files>
+</package>

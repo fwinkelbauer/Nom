@@ -1,0 +1,22 @@
+﻿@Master['Master.html']
+
+@Section['Content']
+
+@If.HasUsername
+<p>Hallo @Model.CurrentUsername!</p>
+@EndIf
+
+@IfNot.HasUsername
+<p>Hallo!</p>
+
+<p>Bevor du NOM benutzen kannst brauchen wir noch deinen Namen. Dieser wird lokal auf deinem Computer in einem Cookie gespeichert. Damit können wir eine Bestellung einer Person zuordnen.</p>
+@EndIf
+
+<p>Gib bitte deinen Namen ein:</p>
+
+<form action="~/register">
+    <input type="text" name="username" />
+    <input type="submit" value="Bestätigen" />
+</form>
+
+@EndSection
