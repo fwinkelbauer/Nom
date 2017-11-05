@@ -4,14 +4,15 @@ using NomOrderManager.Domain;
 
 namespace NomOrderManager.Model
 {
-    public class OverviewModel : IDeliveryServiceModel
+    public class OverviewModel : IOrdersModel
     {
         public OverviewModel(string serviceName, string phoneNumber, IEnumerable<Order> orders)
         {
+            var tmp = orders.ToList();
             Name = $"{serviceName} - Zusammenfassung";
             ServiceName = serviceName;
             PhoneNumber = phoneNumber;
-            GroupedOrders = orders
+            GroupedOrders = tmp
                 .GroupBy(o => new { o.Item, o.Comment })
                 .Select(g => new GroupedOrder()
                 {
@@ -22,7 +23,16 @@ namespace NomOrderManager.Model
                     Comment = g.Key.Comment
                 });
 
-            Count = orders.Count();
+            foreach (var order in tmp)
+            {
+                if (order.HasComment)
+                {
+                    HasComment = true;
+                    return;
+                }
+            }
+
+            Count = tmp.Count();
             CountText = Count > 1 ? $"{Count} Bestellungen" : $"{Count} Bestellung";
             Total = GroupedOrders.Sum(g => g.PriceSum);
         }
@@ -50,5 +60,7 @@ namespace NomOrderManager.Model
                 return Total.ToString(Item.PriceFormatString);
             }
         }
+
+        public bool HasComment { get; }
     }
 }

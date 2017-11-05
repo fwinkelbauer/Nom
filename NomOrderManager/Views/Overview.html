@@ -1,6 +1,6 @@
-﻿@Master['DeliveryMaster.html']
+﻿@Master['OrdersMaster.html']
 
-@Section['ContextInformation']
+@Section['TableInformation']
 
 @If.HasData
 <table>
@@ -14,7 +14,7 @@
     @Each.GroupedOrders
     <tr>
         <td>@Current.Amount</td>
-        <td>@Current.Name</td>
+        <td>@Current.Name@If.HasComment<span class="note">*</span>@EndIf</td>
         <td>@Current.Comment</td>
         <td>@Current.PriceText</td>
         <td>@Current.PriceSumText</td>

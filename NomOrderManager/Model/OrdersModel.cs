@@ -4,14 +4,27 @@ using NomOrderManager.Domain;
 
 namespace NomOrderManager.Model
 {
-    public class OrdersModel : IDeliveryServiceModel
+    public class OrdersModel : IOrdersModel
     {
         public OrdersModel(string serviceName, string phoneNumber, IEnumerable<Order> orders, string host)
         {
             Name = $"{serviceName} - Bestellungen";
             ServiceName = serviceName;
             PhoneNumber = phoneNumber;
-            WrappedOrders = orders.Select(o => new OrderWrapper(o, host));
+            var list = new List<OrderWrapper>();
+
+            foreach (var order in orders)
+            {
+                var wrap = new OrderWrapper(order, host);
+                list.Add(wrap);
+
+                if (wrap.Order.HasComment)
+                {
+                    HasComment = true;
+                }
+            }
+
+            WrappedOrders = list;
         }
 
         public string ServiceName { get; }
@@ -23,5 +36,7 @@ namespace NomOrderManager.Model
         public IEnumerable<OrderWrapper> WrappedOrders { get; }
 
         public bool HasData { get { return WrappedOrders.Any(); } }
+
+        public bool HasComment { get; }
     }
 }

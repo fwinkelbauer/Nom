@@ -27,5 +27,13 @@
         }
 
         public string Comment { get; set; }
+
+        public bool HasComment
+        {
+            get
+            {
+                return !string.IsNullOrEmpty(Comment);
+            }
+        }
     }
 }

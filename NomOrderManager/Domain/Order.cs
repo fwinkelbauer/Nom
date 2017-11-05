@@ -9,6 +9,7 @@
             Comment = comment;
             Host = host;
             Username = username;
+            HasComment = !string.IsNullOrEmpty(Comment);
         }
 
         public int Id { get; }
@@ -20,5 +21,7 @@
         public string Host { get; }
 
         public string Username { get; }
+
+        public bool HasComment { get; }
     }
 }

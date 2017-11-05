@@ -1,6 +1,6 @@
-﻿@Master['DeliveryMaster.html']
+﻿@Master['OrdersMaster.html']
 
-@Section['ContextInformation']
+@Section['TableInformation']
 
 @If.HasData
 <table>
@@ -18,7 +18,7 @@
     @IfNot.CanCancel
     <tr>
     @EndIf
-        <td>@Current.Order.Item.Name</td>
+        <td>@Current.Order.Item.Name@If.Order.HasComment<span class="note">*</span>@EndIf</td>
         <td>@Current.Order.Comment</td>
         <td>@Current.Order.Item.PriceText</td>
         <td>@Current.Order.Username</td>

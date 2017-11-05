@@ -77,6 +77,7 @@
     <Compile Include="Domain\Order.cs" />
     <Compile Include="Model\IndexModel.cs" />
     <Compile Include="Domain\Item.cs" />
+    <Compile Include="Model\IOrdersModel.cs" />
     <Compile Include="Model\MenuModel.cs" />
     <Compile Include="Model\OrdersModel.cs" />
     <Compile Include="Model\OverviewModel.cs" />
@@ -110,6 +111,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Orders.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\OrdersMaster.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Overview.html">

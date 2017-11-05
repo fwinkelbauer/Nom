@@ -66,6 +66,11 @@ tr.owner:hover {
     background-color: #ffbb00;
 }
 
+.note {
+    font-weight: bold;
+    color: red;
+}
+
 .cellComment {
     width: 97%;
 }
