@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("NomOrderManager")]
-[assembly: AssemblyCopyright("Copyright © Florian Winkelbauer 2017")]
+[assembly: AssemblyCopyright("Copyright © Florian Winkelbauer 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

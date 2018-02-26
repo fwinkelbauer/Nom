@@ -1,5 +1,5 @@
 [assembly]
-AssemblyInfo.cs | UTF-8 = (?<version>\d+\.\d+\.\d+\.\d+)
+AssemblyInfo.cs
 
-[semver]
-NomOrderManager\Views\*.html = v(?<version>\d+\.\d+\.\d+)
+[nuspec]
+NomOrderManager\Views\Master.html = v(?<version>\d+\.\d+\.\d+)

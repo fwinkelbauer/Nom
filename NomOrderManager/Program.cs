@@ -7,14 +7,12 @@ namespace NomOrderManager
 {
     public static class Program
     {
-        private const string LogPath = @"C:\ProgramData\Nom\{Date}.txt";
-
         public static void Main()
         {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .WriteTo.Console()
-                .WriteTo.RollingFile(LogPath, retainedFileCountLimit: 2)
+                .WriteTo.RollingFile(@"logs\{Date}.txt", retainedFileCountLimit: 2)
                 .CreateLogger();
 
             var config = new HostConfiguration()
