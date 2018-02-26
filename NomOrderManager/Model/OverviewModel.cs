@@ -28,7 +28,7 @@ namespace NomOrderManager.Model
                 if (order.HasComment)
                 {
                     HasComment = true;
-                    return;
+                    break;
                 }
             }
 
