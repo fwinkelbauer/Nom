@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>nom</id>
+    <version>0.1.0</version>
+    <title>NomOrderManager</title>
+    <authors>fwinkelbauer</authors>
+    <description>NOM is a fun web project which can be used to gather food delivery service orders</description>
+    <tags>Fool Delivery</tags>
+    <dependencies>
+      <dependency id="nssm" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src=".\..\Artifacts\Build\NomOrderManager\**\*" target="tools" />
+    <file src="chocolateyInstall.ps1" target="tools" />
+    <file src="chocolateyUninstall.ps1" target="tools" />
+  </files>
+</package>
